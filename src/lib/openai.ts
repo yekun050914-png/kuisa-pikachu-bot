@@ -36,7 +36,7 @@ export async function generateReply(messages: Message[], signal: AbortSignal): P
   if (response.status !== "completed" || response.error || response.incomplete_details) {
     throw new ChatError("답변이 완성되지 않았어요. 질문을 짧게 바꾸거나 다시 보내 주세요.", 502);
   }
-  const reply = response.output_text?.trim();
+  const reply = limitPika(response.output_text?.trim() ?? "");
   if (!reply) {
     throw new ChatError("텍스트 답변을 받지 못했어요. 다시 보내 주세요.", 502);
   }
@@ -45,4 +45,25 @@ export async function generateReply(messages: Message[], signal: AbortSignal): P
     throw new ChatError("답변이 너무 길어요. 더 짧게 답해 달라고 요청해 주세요.", 502);
   }
   return reply;
+}
+
+/** 한 말풍선에 '피카'가 최대 2번만 나오도록 3번째부터 지웁니다. ('피카피카'는 2번, '피카츄'는 안 셈) */
+export function limitPika(text: string, max = 2): string {
+  let count = 0;
+  return text
+    .replace(/(,\s*)?(?:피카(?!츄))+([!?…~.]*)/g, (match, comma: string | undefined, punct: string) => {
+      const n = (match.match(/피카(?!츄)/g) ?? []).length;
+      if (count + n <= max) {
+        count += n;
+        return match;
+      }
+      const keep = Math.max(0, max - count);
+      count = max;
+      if (keep > 0) return `${comma ?? ""}${"피카".repeat(keep)}${punct}`;
+      return punct || (comma ? "" : "");
+    })
+    .replace(/\s+([!?.])/g, "$1")
+    .replace(/([!?.]){2,}/g, "$1")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
