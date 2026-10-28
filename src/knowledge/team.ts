@@ -38,17 +38,17 @@ export const team: {
   groupName: "Hot-Six (Hot-6ix, 26기 6조)",
   slogan: "버디와 벗이 특히 친하고 다 같이 잘 뭉치는 조",
   semester: "2026년 2학기 상반기 (금요일 상반기 전체회의 발표)",
-  meetingCount: "",
+  meetingCount: "금요일 발표자는 도예빈, 이채민, 김예건",
 
   // 조원. from=출생연도, oneLiner=포켓몬 이름 등
   members: [
     { name: "윤선욱", role: "조장", from: "04", oneLiner: "발표 속 '윤 박사'(Hot-6ix 연구소장)", birthday: "5/20", hobbies: "러닝, 스포츠 관람",
-      funFacts: "하스(하나스퀘어) 상주 공부러, 밤에 하스 잔디 치킨 파티 주최, 어릴 때 미대 준비해서 그림 잘 그림, 새콤달콤 복숭아맛 러버, 참깨라면+누룽지 추천" },
+      funFacts: "하스(하나스퀘어) 상주 공부러, 밤에 하스 잔디 치킨 파티 주최, 어릴 때 미대 준비해서 그림 잘 그림, 새콤달콤 복숭아맛 러버, 참깨라면+누룽지 추천, 이과 감성, 고대 건물 부수기 게임 SMASH-KU 1등" },
     { name: "자비(Diaby)", role: "운영진", from: "05", oneLiner: "포켓몬 이름 잠만자비, 궂은일을 앞장서 도맡아 별명이 '소년가장'", birthday: "9/19", hobbies: "운동", funFacts: "최애 컵라면 콕콕콕 스파게티" },
     { name: "송연우", role: "운영진", from: "05", oneLiner: "포켓몬 이름 연꽃우" },
     { name: "김예건", role: "기획팀", from: "05", oneLiner: "포켓몬 이름 예건부기", birthday: "9/14", hobbies: "맛있는 커피 마시기, 스포츠 보기" },
     { name: "이채민", role: "기획팀", from: "06", oneLiner: "포켓몬 이름 채민츄", birthday: "10/17", hobbies: "뮤지컬, 드라마, 훠궈, 심리테스트",
-      loveAboutTeam: "진짜 착함! 생일에 케이크 직접 만들어 축하해 줌" },
+      loveAboutTeam: "진짜 착함! 생일에 케이크 직접 만들어 축하해 줌", funFacts: "조원들이 '핫식스 하트', '핫식스 필수조건'이라 부름" },
     { name: "전세은", role: "밥조", from: "04", oneLiner: "포켓몬 이름 세은링", birthday: "12/9", hobbies: "드라마" },
     { name: "김정현", role: "밥조", from: "05", oneLiner: "포켓몬 이름 정현", birthday: "7/11", hobbies: "러닝, 넷플릭스" },
     { name: "도예빈", role: "밥조", from: "05", oneLiner: "포켓몬 이름 또도예빈", birthday: "5/15", hobbies: "여행, 음악", funFacts: "열품타 그룹 'Hotsix never sleep' 만듦" },
@@ -57,7 +57,7 @@ export const team: {
     { name: "세드릭(본명 곽경현)", role: "밥조", from: "06", oneLiner: "포켓몬 이름 세드리자몽, 예전엔 버디였다가 지금은 벗", birthday: "10/18", hobbies: "축구, 게임",
       funFacts: "쿠이사FC 활동, 조원 공부용 스터디룸 예약" },
     { name: "박민하", role: "미디어", from: "", oneLiner: "포켓몬 이름 민하뇽", birthday: "10/7" },
-    { name: "박수연", role: "미디어", from: "", oneLiner: "포켓몬 이름 박수뇽" },
+    { name: "박수연", role: "미디어", from: "", oneLiner: "포켓몬 이름 박수뇽", funFacts: "코노(코인노래방) 소모임을 엶" },
     { name: "김윤아", role: "미디어", from: "06", oneLiner: "포켓몬 이름 윤아킹", birthday: "8/22", hobbies: "영화, 노래 듣기",
       loveAboutTeam: "끈끈하고 따뜻해서 함께 있으면 행복함", funFacts: "최애 라면 육개장, 참깨라면" },
   ],
@@ -71,6 +71,7 @@ export const team: {
     { date: "9월", title: "기획 MT", place: "", what: "약 50명 참여. 새벽 풋살, 소고기 구워 먹으며 버디와 교류", highlight: "" },
     { date: "", title: "고연전", place: "", what: "야구 등 일어나서 열심히 응원, 뒷풀이까지", highlight: "" },
     { date: "10월 시험기간", title: "양꼬치 회식 & 같이 공부", place: "안암", what: "벗들끼리 양꼬치 1차 회식, 열품타·스터디룸·하스에서 같이 공부", highlight: "" },
+    { date: "10/27", title: "시험 끝 벗 회식", place: "", what: "시험 끝나자마자 다 같이 회식", highlight: "" },
   ],
 
   numbers: [
@@ -87,7 +88,10 @@ export const team: {
     "보드게임카페에서 막걸리 티어 매기기, 소년가장 잠만자비가 굴욕의 패배",
     "공포 테마 방탈출에서 윤선욱이 소리를 엄청 지름",
     "이채민 생일에 조원들이 케이크를 직접 만들어 줌",
-    "박민하 생일 자정에 조원 전원이 단톡방에 축하",
+    "조원 생일(박민하, 이채민, 세드릭)마다 자정 땡 하자마자 단톡방이 축하로 도배됨. 이채민은 공부하다 뛰쳐나왔고, 세드릭 생일엔 채민이 '이제 우리 동갑'",
+    "벗회의 뒷풀이 신청 인원이 우리 조가 제일 많았음",
+    "운석이 세냐 핵폭탄이 세냐 논쟁에서 윤선욱이 퍼텐셜 에너지까지 설명하고 '미안 너무 이과였다'고 사과함",
+    "시험기간 정경관은 모기 지옥이라 다들 공부를 못 했다고 주장함",
     "세드릭이 말없이 공부만 하는 공부 소모임이 무서워서 도망침",
     "윤선욱이 밤 10시 반 하스 잔디 치킨 파티를 열어 줌",
     "핫식스 릴스가 다른 조보다 늦게 올라와 다들 기다렸고, 올라오자 너무 잘 나왔다고 난리 남",
@@ -140,7 +144,7 @@ export function buildKnowledge(): string {
   out.push(line("조 이름", team.groupName));
   out.push(line("한 줄 소개", team.slogan));
   out.push(line("활동 기간", team.semester));
-  out.push(line("모임", team.meetingCount));
+  out.push(line("참고", team.meetingCount));
 
   const members = team.members.filter((m) => filled(m.name));
   if (members.length) {
