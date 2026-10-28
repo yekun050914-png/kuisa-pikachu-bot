@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { buildCharacterInstructions } from "@/prompts/character";
 import { MAX_MESSAGE_LENGTH, type Message } from "@/lib/chat";
 
-const RECENT_MESSAGES = 6;
+const RECENT_MESSAGES = 16;
 
 // 이 오류에만 브라우저에 보여도 되는 문구를 넣습니다. SDK 원문은 보내지 않습니다.
 export class ChatError extends Error {
@@ -20,7 +20,7 @@ export async function generateReply(messages: Message[], signal: AbortSignal): P
     throw new ChatError("서버의 OPENAI_API_KEY 설정을 확인해 주세요.", 503);
   }
 
-  // 비용 절약: 최근 대화 6개만 보냅니다 (자료는 매번 지침에 들어가므로 앞 대화가 없어도 답할 수 있음).
+  // 비용 절약: 최근 대화 16개(8번 주고받기)만 보냅니다 (자료는 매번 지침에 들어가므로 앞 대화가 없어도 답할 수 있음).
   const recent = messages.slice(-RECENT_MESSAGES);
 
   // 요청 시 생성하여 API 키 없이도 빌드할 수 있습니다. 키는 서버에만 존재합니다.
