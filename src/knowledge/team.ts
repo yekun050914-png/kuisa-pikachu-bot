@@ -52,7 +52,11 @@ export const team: {
       hobbies: "운동",
     },
     { name: "송연우", role: "운영진", from: "05년생", oneLiner: "포켓몬 이름 연꽃우" },
-    { name: "김예건", role: "기획팀", from: "05년생", oneLiner: "포켓몬 이름 예건부기" },
+    {
+      name: "김예건", role: "기획팀", from: "05년생", oneLiner: "포켓몬 이름 예건부기",
+      birthday: "9월 14일",
+      hobbies: "맛있는 커피 마시기, 스포츠 보기",
+    },
     {
       name: "이채민", role: "기획팀", from: "06년생", oneLiner: "포켓몬 이름 채민츄",
       birthday: "10월 17일",
