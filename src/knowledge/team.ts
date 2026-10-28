@@ -60,7 +60,11 @@ export const team: {
       loveAboutTeam: "다들 진짜 착하다. 생일 때 조원들이 케이크를 직접 만들어서 축하해 줌. 최고!",
     },
     { name: "전세은", role: "밥조", from: "04년생", oneLiner: "포켓몬 이름 세은링" },
-    { name: "김정현", role: "밥조", from: "05년생", oneLiner: "포켓몬 이름 정현" },
+    {
+      name: "김정현", role: "밥조", from: "05년생", oneLiner: "포켓몬 이름 정현",
+      birthday: "7월 11일",
+      hobbies: "러닝하기, 넷플릭스 보기",
+    },
     {
       name: "도예빈", role: "밥조", from: "05년생", oneLiner: "포켓몬 이름 또도예빈",
       birthday: "5월 15일",
