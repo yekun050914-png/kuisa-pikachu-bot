@@ -166,6 +166,11 @@ export default function Chat({
             <span>새 대화</span>
           </button>
         </header>
+        <div className="conversation-wrap">
+        {img.corner && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="chat-corner" src={IMAGE_FILES.corner} alt="" aria-hidden="true" />
+        )}
         <div
           className="conversation"
           role="log"
@@ -220,6 +225,7 @@ export default function Chat({
             </>
           )}
           <div ref={bottom} />
+        </div>
         </div>
         <form className="composer" onSubmit={handleSubmit}>
           {error && (
@@ -299,6 +305,7 @@ const IMAGE_FILES = {
   send: "/send.png", // 보내기 버튼
   avatar: "/avatar.png", // 피카츄 말풍선 옆 작은 얼굴
   userAvatar: "/user-avatar.png", // 내 말풍선 옆 작은 얼굴
+  corner: "/chat-corner.png", // 대화창 오른쪽 아래 장식 사진
 } as const;
 
 type ImageKey = keyof typeof IMAGE_FILES;
@@ -310,6 +317,7 @@ function useAvailableImages(files: typeof IMAGE_FILES) {
     send: false,
     avatar: false,
     userAvatar: false,
+    corner: false,
   });
   useEffect(() => {
     let alive = true;
