@@ -17,6 +17,7 @@ export default function Chat({
 }) {
   // public 폴더에 있는 사진만 씁니다. 없으면 기본 모양(⚡, 화살표 등)이 그대로 나옵니다.
   const img = useAvailableImages(IMAGE_FILES);
+  const cornerSrc = useFirstAvailable(CORNER_FILES);
   // 성공한 대화만 기록합니다. 첫 인사는 화면에서 별도로 보여 주는 설정 문구입니다.
   // [확장 포인트] 새로고침 후에도 기록을 유지하려면 초기 조회와 성공 시 DB 저장을 연결합니다.
   const [messages, setMessages] = useState<Message[]>([]);
@@ -167,9 +168,9 @@ export default function Chat({
           </button>
         </header>
         <div className="conversation-wrap">
-        {img.corner && (
+        {cornerSrc && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img className="chat-corner" src={IMAGE_FILES.corner} alt="" aria-hidden="true" />
+          <img className="chat-corner" src={cornerSrc} alt="" aria-hidden="true" />
         )}
         <div
           className="conversation"
@@ -305,7 +306,6 @@ const IMAGE_FILES = {
   send: "/send.png", // 보내기 버튼
   avatar: "/avatar.png", // 피카츄 말풍선 옆 작은 얼굴
   userAvatar: "/user-avatar.png", // 내 말풍선 옆 작은 얼굴
-  corner: "/chat-corner.png", // 대화창 오른쪽 아래 장식 사진
 } as const;
 
 type ImageKey = keyof typeof IMAGE_FILES;
@@ -317,7 +317,6 @@ function useAvailableImages(files: typeof IMAGE_FILES) {
     send: false,
     avatar: false,
     userAvatar: false,
-    corner: false,
   });
   useEffect(() => {
     let alive = true;
@@ -346,4 +345,27 @@ function Speaker({ name, avatar }: { name: string; avatar: string | null }) {
       {name}
     </span>
   );
+}
+
+// 대화창 오른쪽 아래 장식 사진. 확장자는 png, jpg, jpeg, webp 아무거나 됩니다.
+const CORNER_FILES = ["/chat-corner.png", "/chat-corner.jpg", "/chat-corner.jpeg", "/chat-corner.webp"];
+
+/** 후보 중 실제로 있는 첫 번째 사진 주소를 돌려줍니다. 없으면 null. */
+function useFirstAvailable(candidates: string[]) {
+  const [src, setSrc] = useState<string | null>(null);
+  useEffect(() => {
+    let alive = true;
+    const tryAt = (i: number) => {
+      if (!alive || i >= candidates.length) return;
+      const probe = new window.Image();
+      probe.onload = () => alive && setSrc(candidates[i]);
+      probe.onerror = () => tryAt(i + 1);
+      probe.src = candidates[i];
+    };
+    tryAt(0);
+    return () => {
+      alive = false;
+    };
+  }, [candidates]);
+  return src;
 }
