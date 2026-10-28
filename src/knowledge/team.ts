@@ -11,40 +11,60 @@ import "server-only";
 export const team = {
   // 기본 정보
   program: "KUISA (고려대 외국인 학생 버디 프로그램)",
-  groupName: "Hot-Six (KUISA 26기 6조)", // 예: "6조 hot-six"
-  slogan: "", // 조 한 줄 소개. 예: "버디보다 벗이 더 신난 조"
+  groupName: "Hot-Six (발표에선 Hot-6ix로도 씀, KUISA 26기 6조)",
+  slogan: "벗들끼리 먼저 똘똘 뭉치고, 그 힘으로 버디들과 활발하게 교류한 조",
   semester: "2026년 상반기",
-  meetingCount: "", // 예: "공식 모임 5번, 번개 3번"
+  meetingCount: "개강 전에만 번개 6차",
 
-  // 조원 (벗 = 한국인 학생, 버디 = 외국인 학생)
+  // 조원 (from 칸에는 출생연도, oneLiner에는 발표 속 포켓몬 별명)
   members: [
-    { name: "", role: "벗", from: "", oneLiner: "" },
-    { name: "", role: "버디", from: "", oneLiner: "" },
-    // 예: { name: "예건", role: "벗", from: "한국", oneLiner: "레크 담당, 게임 만들다 밤샘" },
+    { name: "윤선욱", role: "조장", from: "04년생", oneLiner: "발표에서 Hot-6ix 연구소장 '윤 박사'로 등장" },
+    { name: "자비", role: "운영진", from: "05년생", oneLiner: "별명 잠만자비, '소년가장'으로 불림" },
+    { name: "송연우", role: "운영진", from: "05년생", oneLiner: "별명 연꽃우" },
+    { name: "김예건", role: "기획팀", from: "05년생", oneLiner: "별명 예건부기" },
+    { name: "이채민", role: "기획팀", from: "06년생", oneLiner: "별명 채민츄" },
+    { name: "전세은", role: "밥조", from: "04년생", oneLiner: "별명 세은링" },
+    { name: "김정현", role: "밥조", from: "05년생", oneLiner: "별명 정현" },
+    { name: "도예빈", role: "밥조", from: "05년생", oneLiner: "별명 또도예빈" },
+    { name: "이유빈", role: "밥조", from: "", oneLiner: "별명 이브빈" },
+    { name: "김상엽", role: "밥조", from: "", oneLiner: "별명 이상엽씨" },
+    { name: "세드릭", role: "밥조", from: "", oneLiner: "별명 세드리자몽" },
+    { name: "박민하", role: "미디어", from: "", oneLiner: "별명 민하뇽" },
+    { name: "박수연", role: "미디어", from: "", oneLiner: "별명 박수뇽" },
+    { name: "김윤아", role: "미디어", from: "", oneLiner: "별명 윤아킹" },
   ],
 
   // 상반기 활동 (시간 순서대로)
   activities: [
-    { date: "", title: "", place: "", what: "", highlight: "" },
-    // 예: { date: "3월 넷째 주", title: "첫 만남", place: "안암 OO식당", what: "자기소개, 이름 외우기 게임", highlight: "버디가 떡볶이 처음 먹고 울었음" },
+    { date: "개강 전", title: "번개 모임", place: "", what: "벗들끼리 먼저 친해지려고 개강 전에만 번개를 6차까지 함", highlight: "첫 만남은 치맥" },
+    { date: "", title: "보드게임카페 번개", place: "보드게임카페", what: "보드게임 하면서 부쩍 친해짐, 막걸리 티어 매기기도 함", highlight: "소년가장 잠만자비가 굴욕의 패배를 맛봄" },
+    { date: "", title: "공포 테마 번개", place: "", what: "공포 테마 체험", highlight: "윤 박사(조장 윤선욱)가 빽빽 소리 지름" },
+    { date: "", title: "벗 OT & MT", place: "", what: "벗(한국인 학생)들끼리 팀워크 다지기", highlight: "" },
+    { date: "", title: "개강총회 · 개강파티", place: "", what: "드디어 버디(외국인 학생)들을 맞이하고 함께 어울림", highlight: "" },
+    { date: "개총과 개파 사이", title: "스페셜 미션: 응원 OT", place: "", what: "응원 OT 참여", highlight: "" },
+    { date: "9월", title: "기획 MT", place: "", what: "약 50명이 함께한 MT, 고기 구우며 버디들과 교류", highlight: "" },
+    { date: "", title: "고연전", place: "", what: "다 같이 고연전", highlight: "" },
   ],
 
   // 숫자로 자랑할 것
   numbers: [
-    { label: "", value: "" },
-    // 예: { label: "같이 먹은 삼겹살", value: "약 12인분" },
+    { label: "개강 전 번개 횟수", value: "6차" },
+    { label: "9월 기획 MT 인원", value: "약 50명" },
+    { label: "조원 수", value: "14명" },
   ],
 
   // 웃긴 에피소드, 명장면
   episodes: [
-    "",
-    // 예: "MT에서 버디가 한국어로 '배고파'만 30번 말함",
+    "첫 만남부터 치맥으로 시작함",
+    "보드게임카페에서 막걸리 티어 매기기를 함",
+    "소년가장 잠만자비(자비)가 보드게임에서 굴욕의 패배를 맛봄",
+    "공포 테마에서 조장 윤선욱(윤 박사)이 빽빽 소리 지름",
   ],
 
   // 예상 질문과 우리가 정한 답 (챗봇이 이 답을 가장 우선해서 씁니다)
   faq: [
-    { q: "", a: "" },
-    // 예: { q: "제일 재밌었던 활동은?", a: "MT! 레크 게임에서 조원 전원이 벌칙 받음" },
+    { q: "너희 조의 제일 큰 자랑은?", a: "벗들끼리 개강 전부터 번개 6차로 똘똘 뭉쳤고, 그 덕에 버디들과도 교류가 정말 잘 됐다는 것" },
+    { q: "조장이 누구야?", a: "윤선욱! 발표에서는 Hot-6ix 연구소장 윤 박사로 나와" },
   ],
 
   // 챗봇이 대답하면 안 되는 주제 (물어보면 정중히 넘깁니다)
