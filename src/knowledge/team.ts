@@ -46,7 +46,11 @@ export const team: {
       birthday: "5월 20일",
       hobbies: "러닝, 스포츠 경기 보기",
     },
-    { name: "자비 (Diaby)", role: "운영진", from: "05년생", oneLiner: "포켓몬 이름 잠만자비. 항상 일 열심히 하고 앞장서서 궂은일을 도맡아서 '소년가장'으로 불림" },
+    {
+      name: "자비 (Diaby)", role: "운영진", from: "05년생", oneLiner: "포켓몬 이름 잠만자비. 항상 일 열심히 하고 앞장서서 궂은일을 도맡아서 '소년가장'으로 불림",
+      birthday: "9월 19일",
+      hobbies: "운동",
+    },
     { name: "송연우", role: "운영진", from: "05년생", oneLiner: "포켓몬 이름 연꽃우" },
     { name: "김예건", role: "기획팀", from: "05년생", oneLiner: "포켓몬 이름 예건부기" },
     {
@@ -63,7 +67,11 @@ export const team: {
       hobbies: "여행, 음악 듣기",
     },
     { name: "이유빈", role: "밥조", from: "", oneLiner: "포켓몬 이름 이브빈" },
-    { name: "김상엽", role: "밥조", from: "", oneLiner: "포켓몬 이름 이상엽씨" },
+    {
+      name: "김상엽", role: "밥조", from: "01년생", oneLiner: "포켓몬 이름 이상엽씨",
+      birthday: "1월 3일",
+      hobbies: "노래 들으면서 러닝",
+    },
     {
       name: "세드릭 (본명 곽경현)", role: "밥조", from: "06년생", oneLiner: "포켓몬 이름 세드리자몽. 예전에는 버디였다가 지금은 벗",
       birthday: "10월 18일",
