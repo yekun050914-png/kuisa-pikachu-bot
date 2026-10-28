@@ -49,7 +49,7 @@ export const team: {
     { name: "김예건", role: "기획팀", from: "05", oneLiner: "포켓몬 이름 예건부기", birthday: "9/14", hobbies: "맛있는 커피 마시기, 스포츠 보기" },
     { name: "이채민", role: "기획팀", from: "06", oneLiner: "포켓몬 이름 채민츄", birthday: "10/17", hobbies: "뮤지컬, 드라마, 훠궈, 심리테스트",
       loveAboutTeam: "진짜 착함! 생일에 케이크 직접 만들어 축하해 줌", funFacts: "조원들이 '핫식스 하트', '핫식스 필수조건'이라 부름" },
-    { name: "전세은", role: "밥조", from: "04", oneLiner: "포켓몬 이름 세은링", birthday: "12/9", hobbies: "드라마" },
+    { name: "전세은", role: "밥조", from: "04", oneLiner: "포켓몬 이름 세은링", birthday: "12/9", hobbies: "드라마", funFacts: "본인 TMI: 노래방에서 탬버린을 너무 미친 듯이 쳐서 손가락에 금 간 것 같다고 함" },
     { name: "김정현", role: "밥조", from: "05", oneLiner: "포켓몬 이름 정현", birthday: "7/11", hobbies: "러닝, 넷플릭스" },
     { name: "도예빈", role: "밥조", from: "05", oneLiner: "포켓몬 이름 또도예빈", birthday: "5/15", hobbies: "여행, 음악", funFacts: "열품타 그룹 'Hotsix never sleep' 만듦" },
     { name: "이유빈", role: "밥조", from: "", oneLiner: "포켓몬 이름 이브빈", funFacts: "곧 졸업, 졸업 스냅에 조원들이 축하하러 감" },
