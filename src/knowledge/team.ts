@@ -13,7 +13,7 @@ type Member = {
   name: string;
   role: string; // 조장, 운영진, 기획팀, 밥조, 미디어
   from: string; // 출생연도 (예: "05년생")
-  oneLiner: string; // 발표 속 별명 등 한 줄 소개
+  oneLiner: string; // 발표 속 포켓몬 이름 등 한 줄 소개
   birthday?: string; // 생일 (예: "10월 17일")
   hobbies?: string; // 취미
   loveAboutTeam?: string; // 본인이 말한 핫식스의 장점
@@ -35,7 +35,7 @@ export const team: {
   // 기본 정보
   program: "KUISA (고려대 외국인 학생 버디 프로그램)",
   groupName: "Hot-Six (발표에선 Hot-6ix로도 씀, KUISA 26기 6조)",
-  slogan: "벗들끼리 먼저 똘똘 뭉치고, 그 힘으로 버디들과 활발하게 교류한 조",
+  slogan: "버디와 벗이 특히 친하고, 다 같이 잘 뭉치는 조",
   semester: "2026년 상반기",
   meetingCount: "개강 전에만 번개 6차",
 
@@ -46,29 +46,29 @@ export const team: {
       birthday: "5월 20일",
       hobbies: "러닝, 스포츠 경기 보기",
     },
-    { name: "자비", role: "운영진", from: "05년생", oneLiner: "별명 잠만자비, '소년가장'으로 불림" },
-    { name: "송연우", role: "운영진", from: "05년생", oneLiner: "별명 연꽃우" },
-    { name: "김예건", role: "기획팀", from: "05년생", oneLiner: "별명 예건부기" },
+    { name: "자비", role: "운영진", from: "05년생", oneLiner: "포켓몬 이름 잠만자비, '소년가장'으로 불림" },
+    { name: "송연우", role: "운영진", from: "05년생", oneLiner: "포켓몬 이름 연꽃우" },
+    { name: "김예건", role: "기획팀", from: "05년생", oneLiner: "포켓몬 이름 예건부기" },
     {
-      name: "이채민", role: "기획팀", from: "06년생", oneLiner: "별명 채민츄",
+      name: "이채민", role: "기획팀", from: "06년생", oneLiner: "포켓몬 이름 채민츄",
       birthday: "10월 17일",
       hobbies: "뮤지컬 보기, 드라마 보기, 훠궈 먹기, 심리테스트 하기",
       loveAboutTeam: "다들 진짜 착하다. 생일 때 조원들이 케이크를 직접 만들어서 축하해 줌. 최고!",
     },
-    { name: "전세은", role: "밥조", from: "04년생", oneLiner: "별명 세은링" },
-    { name: "김정현", role: "밥조", from: "05년생", oneLiner: "별명 정현" },
+    { name: "전세은", role: "밥조", from: "04년생", oneLiner: "포켓몬 이름 세은링" },
+    { name: "김정현", role: "밥조", from: "05년생", oneLiner: "포켓몬 이름 정현" },
     {
-      name: "도예빈", role: "밥조", from: "05년생", oneLiner: "별명 또도예빈",
+      name: "도예빈", role: "밥조", from: "05년생", oneLiner: "포켓몬 이름 또도예빈",
       birthday: "5월 15일",
       hobbies: "여행, 음악 듣기",
     },
-    { name: "이유빈", role: "밥조", from: "", oneLiner: "별명 이브빈" },
-    { name: "김상엽", role: "밥조", from: "", oneLiner: "별명 이상엽씨" },
-    { name: "세드릭", role: "밥조", from: "", oneLiner: "별명 세드리자몽" },
-    { name: "박민하", role: "미디어", from: "", oneLiner: "별명 민하뇽" },
-    { name: "박수연", role: "미디어", from: "", oneLiner: "별명 박수뇽" },
+    { name: "이유빈", role: "밥조", from: "", oneLiner: "포켓몬 이름 이브빈" },
+    { name: "김상엽", role: "밥조", from: "", oneLiner: "포켓몬 이름 이상엽씨" },
+    { name: "세드릭", role: "밥조", from: "", oneLiner: "포켓몬 이름 세드리자몽" },
+    { name: "박민하", role: "미디어", from: "", oneLiner: "포켓몬 이름 민하뇽" },
+    { name: "박수연", role: "미디어", from: "", oneLiner: "포켓몬 이름 박수뇽" },
     {
-      name: "김윤아", role: "미디어", from: "06년생", oneLiner: "별명 윤아킹",
+      name: "김윤아", role: "미디어", from: "06년생", oneLiner: "포켓몬 이름 윤아킹",
       birthday: "8월 22일",
       hobbies: "영화 보기, 노래 듣기",
       loveAboutTeam: "정말 끈끈하고 따뜻하다. 함께 있으면 행복해진다.",
@@ -83,7 +83,7 @@ export const team: {
     { date: "", title: "벗 OT & MT", place: "", what: "벗(한국인 학생)들끼리 팀워크 다지기", highlight: "" },
     { date: "", title: "개강총회 · 개강파티", place: "", what: "드디어 버디(외국인 학생)들을 맞이하고 함께 어울림", highlight: "" },
     { date: "개총과 개파 사이", title: "스페셜 미션: 응원 OT", place: "", what: "응원 OT 참여", highlight: "" },
-    { date: "9월", title: "기획 MT", place: "", what: "약 50명이 함께한 MT, 고기 구우며 버디들과 교류", highlight: "" },
+    { date: "9월", title: "기획 MT", place: "", what: "약 50명이 함께한 MT, 소고기 구워 먹으면서 버디들과 교류", highlight: "새벽에 다 같이 풋살함" },
     { date: "", title: "고연전", place: "", what: "다 같이 고연전", highlight: "" },
   ],
 
@@ -101,11 +101,12 @@ export const team: {
     "소년가장 잠만자비(자비)가 보드게임에서 굴욕의 패배를 맛봄",
     "공포 테마에서 조장 윤선욱(윤 박사)이 빽빽 소리 지름",
     "이채민 생일에 조원들이 케이크를 직접 만들어서 축하해 줌",
+    "MT 때 새벽에 다 같이 풋살을 함",
   ],
 
   // 예상 질문과 우리가 정한 답 (챗봇이 이 답을 가장 우선해서 씁니다)
   faq: [
-    { q: "너희 조의 제일 큰 자랑은?", a: "벗들끼리 개강 전부터 번개 6차로 똘똘 뭉쳤고, 그 덕에 버디들과도 교류가 정말 잘 됐다는 것" },
+    { q: "너희 조의 제일 큰 자랑은?", a: "버디와 벗이 특히 친하고 다 같이 잘 뭉친다는 것! 개강 전부터 번개 6차로 뭉쳤고, MT에선 새벽에 다 같이 풋살까지 했어" },
     { q: "조장이 누구야?", a: "윤선욱! 발표에서는 Hot-6ix 연구소장 윤 박사로 나와" },
   ],
 
