@@ -8,7 +8,30 @@ import "server-only";
  * - 줄을 더 쓰고 싶으면 { ... } 한 덩어리를 복사해서 아래에 붙여 넣으면 됩니다.
  * - 공개하면 안 되는 정보(전화번호, 학번, 사는 곳 등)는 적지 마세요. 발표장 70명 모두가 볼 수 있습니다.
  */
-export const team = {
+// 조원 한 명의 정보. 모르는 칸은 비워 두거나 빼도 됩니다.
+type Member = {
+  name: string;
+  role: string; // 조장, 운영진, 기획팀, 밥조, 미디어
+  from: string; // 출생연도 (예: "05년생")
+  oneLiner: string; // 발표 속 별명 등 한 줄 소개
+  birthday?: string; // 생일 (예: "10월 17일")
+  hobbies?: string; // 취미
+  loveAboutTeam?: string; // 본인이 말한 핫식스의 장점
+};
+
+export const team: {
+  program: string;
+  groupName: string;
+  slogan: string;
+  semester: string;
+  meetingCount: string;
+  members: Member[];
+  activities: { date: string; title: string; place: string; what: string; highlight: string }[];
+  numbers: { label: string; value: string }[];
+  episodes: string[];
+  faq: { q: string; a: string }[];
+  doNotTalkAbout: string[];
+} = {
   // 기본 정보
   program: "KUISA (고려대 외국인 학생 버디 프로그램)",
   groupName: "Hot-Six (발표에선 Hot-6ix로도 씀, KUISA 26기 6조)",
@@ -18,20 +41,38 @@ export const team = {
 
   // 조원 (from 칸에는 출생연도, oneLiner에는 발표 속 포켓몬 별명)
   members: [
-    { name: "윤선욱", role: "조장", from: "04년생", oneLiner: "발표에서 Hot-6ix 연구소장 '윤 박사'로 등장" },
+    {
+      name: "윤선욱", role: "조장", from: "04년생", oneLiner: "발표에서 Hot-6ix 연구소장 '윤 박사'로 등장",
+      birthday: "5월 20일",
+      hobbies: "러닝, 스포츠 경기 보기",
+    },
     { name: "자비", role: "운영진", from: "05년생", oneLiner: "별명 잠만자비, '소년가장'으로 불림" },
     { name: "송연우", role: "운영진", from: "05년생", oneLiner: "별명 연꽃우" },
     { name: "김예건", role: "기획팀", from: "05년생", oneLiner: "별명 예건부기" },
-    { name: "이채민", role: "기획팀", from: "06년생", oneLiner: "별명 채민츄" },
+    {
+      name: "이채민", role: "기획팀", from: "06년생", oneLiner: "별명 채민츄",
+      birthday: "10월 17일",
+      hobbies: "뮤지컬 보기, 드라마 보기, 훠궈 먹기, 심리테스트 하기",
+      loveAboutTeam: "다들 진짜 착하다. 생일 때 조원들이 케이크를 직접 만들어서 축하해 줌. 최고!",
+    },
     { name: "전세은", role: "밥조", from: "04년생", oneLiner: "별명 세은링" },
     { name: "김정현", role: "밥조", from: "05년생", oneLiner: "별명 정현" },
-    { name: "도예빈", role: "밥조", from: "05년생", oneLiner: "별명 또도예빈" },
+    {
+      name: "도예빈", role: "밥조", from: "05년생", oneLiner: "별명 또도예빈",
+      birthday: "5월 15일",
+      hobbies: "여행, 음악 듣기",
+    },
     { name: "이유빈", role: "밥조", from: "", oneLiner: "별명 이브빈" },
     { name: "김상엽", role: "밥조", from: "", oneLiner: "별명 이상엽씨" },
     { name: "세드릭", role: "밥조", from: "", oneLiner: "별명 세드리자몽" },
     { name: "박민하", role: "미디어", from: "", oneLiner: "별명 민하뇽" },
     { name: "박수연", role: "미디어", from: "", oneLiner: "별명 박수뇽" },
-    { name: "김윤아", role: "미디어", from: "", oneLiner: "별명 윤아킹" },
+    {
+      name: "김윤아", role: "미디어", from: "06년생", oneLiner: "별명 윤아킹",
+      birthday: "8월 22일",
+      hobbies: "영화 보기, 노래 듣기",
+      loveAboutTeam: "정말 끈끈하고 따뜻하다. 함께 있으면 행복해진다.",
+    },
   ],
 
   // 상반기 활동 (시간 순서대로)
@@ -59,6 +100,7 @@ export const team = {
     "보드게임카페에서 막걸리 티어 매기기를 함",
     "소년가장 잠만자비(자비)가 보드게임에서 굴욕의 패배를 맛봄",
     "공포 테마에서 조장 윤선욱(윤 박사)이 빽빽 소리 지름",
+    "이채민 생일에 조원들이 케이크를 직접 만들어서 축하해 줌",
   ],
 
   // 예상 질문과 우리가 정한 답 (챗봇이 이 답을 가장 우선해서 씁니다)
@@ -107,6 +149,9 @@ export function buildKnowledge(): string {
     for (const m of members) {
       const extra = [m.from, m.oneLiner].filter(filled).join(", ");
       out.push(`- ${m.name} (${m.role})${extra ? `: ${extra}` : ""}`);
+      if (m.birthday && filled(m.birthday)) out.push(`  · 생일: ${m.birthday}`);
+      if (m.hobbies && filled(m.hobbies)) out.push(`  · 취미: ${m.hobbies}`);
+      if (m.loveAboutTeam && filled(m.loveAboutTeam)) out.push(`  · ${m.name}이(가) 말한 핫식스의 장점: ${m.loveAboutTeam}`);
     }
   }
 
