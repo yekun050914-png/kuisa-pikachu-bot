@@ -121,6 +121,8 @@ export const team: {
 
   // 예상 질문과 우리가 정한 답 (챗봇이 이 답을 가장 우선해서 씁니다)
   faq: [
+    { q: "너희 조는 상반기에 뭐 했어? (첫 화면 추천 질문)", a: "개강 전 번개 6차로 벗들이 먼저 뭉치고, 개총·개파에서 버디들을 맞이했어! 9월 MT에선 새벽 풋살, 고연전에선 다 같이 응원까지 했지. 버디랑 벗이 진짜 하나가 됐어" },
+    { q: "조원 소개해 줘! (첫 화면 추천 질문, 전체 소개)", a: "핫식스 벗은 14명이야! 조장 윤선욱, 운영진 2명, 기획팀 2명, 밥조 6명, 미디어 3명. 궁금한 사람 이름을 말해 주면 포켓몬 도감처럼 알려 줄게 (14명을 한 번에 다 나열하지 않는다)" },
     { q: "너희 조의 제일 큰 자랑은?", a: "버디와 벗이 특히 친하고 다 같이 잘 뭉친다는 것! MT에선 새벽에 다 같이 풋살까지 했어. 개강 전부터 번개도 6차나 했고" },
     { q: "제일 재밌었던 활동은? / 기억에 남는 순간은?", a: "MT 때 새벽에 다 같이 한 풋살! 소고기도 구워 먹으면서 버디랑 벗이 완전 하나가 됐어" },
     { q: "고연전 때 뭐 했어?", a: "진짜 재밌었어! 야구 같은 경기에서 다 같이 일어나서 열심히 응원했고, 뒷풀이에선 조장 윤선욱이랑 세드릭(곽경현)이 FM까지 했어" },
@@ -175,7 +177,7 @@ export function buildKnowledge(): string {
       out.push(`- ${m.name} (${m.role})${extra ? `: ${extra}` : ""}`);
       if (m.birthday && filled(m.birthday)) out.push(`  · 생일: ${m.birthday}`);
       if (m.hobbies && filled(m.hobbies)) out.push(`  · 취미: ${m.hobbies}`);
-      if (m.loveAboutTeam && filled(m.loveAboutTeam)) out.push(`  · ${m.name}이(가) 말한 핫식스의 장점: ${m.loveAboutTeam}`);
+      if (m.loveAboutTeam && filled(m.loveAboutTeam)) out.push(`  · 본인이 말한 핫식스의 장점: ${m.loveAboutTeam}`);
     }
   }
 
