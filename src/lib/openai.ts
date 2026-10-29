@@ -36,7 +36,7 @@ export async function generateReply(messages: Message[], signal: AbortSignal): P
   if (response.status !== "completed" || response.error || response.incomplete_details) {
     throw new ChatError("답변이 완성되지 않았어요. 질문을 짧게 바꾸거나 다시 보내 주세요.", 502);
   }
-  const reply = limitPika(response.output_text?.trim() ?? "");
+  const reply = splitSentences(limitPika(response.output_text?.trim() ?? ""));
   if (!reply) {
     throw new ChatError("텍스트 답변을 받지 못했어요. 다시 보내 주세요.", 502);
   }
@@ -65,5 +65,14 @@ export function limitPika(text: string, max = 2): string {
     .replace(/\s+([!?.])/g, "$1")
     .replace(/([!?.]){2,}/g, "$1")
     .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+/** 폰에서 읽기 쉽게 문장이 끝날 때마다 줄을 바꿉니다. (말풍선은 줄바꿈을 그대로 보여 줌) */
+export function splitSentences(text: string): string {
+  if (text.length <= 40) return text; // 짧은 답은 한 줄 그대로
+  return text
+    .replace(/([.!?…])\s+(?=\S)/g, "$1\n")
+    .replace(/\n{2,}/g, "\n")
     .trim();
 }
