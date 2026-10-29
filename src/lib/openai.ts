@@ -70,7 +70,7 @@ export function limitPika(text: string, max = 2): string {
 
 /** 폰에서 읽기 쉽게 문장이 끝날 때마다 줄을 바꿉니다. (말풍선은 줄바꿈을 그대로 보여 줌) */
 export function splitSentences(text: string): string {
-  if (text.length <= 40) return text; // 짧은 답은 한 줄 그대로
+  if (text.length <= 40) return text.replace(/,[ \t]+(?=(?:피카)+)/g, ",\u00A0").replace(/[ \t]+(?=⚡)/g, "\u00A0"); // 짧은 답은 한 줄 그대로
   const lines = text
     .replace(/([.!?…])\s+(?=\S)/g, "$1\n")
     .split(/\n+/)
@@ -83,5 +83,9 @@ export function splitSentences(text: string): string {
     if (isTiny && merged.length) merged[merged.length - 1] += ` ${line}`;
     else merged.push(line);
   }
-  return merged.join("\n");
+  // ', 피카!'와 '⚡'가 화면 폭 때문에 혼자 다음 줄로 밀리지 않게 앞 단어와 붙입니다(줄바꿈 안 되는 공백).
+  return merged
+    .join("\n")
+    .replace(/,[ \t]+(?=(?:피카)+)/g, ",\u00A0")
+    .replace(/[ \t]+(?=⚡)/g, "\u00A0");
 }
