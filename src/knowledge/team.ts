@@ -52,7 +52,7 @@ export const team: {
     { name: "전세은", role: "밥조", from: "04", oneLiner: "포켓몬 이름 세은링", birthday: "12/9", hobbies: "드라마", funFacts: "본인 TMI: 노래방에서 탬버린을 너무 미친 듯이 쳐서 손가락에 금 간 것 같다고 함" },
     { name: "김정현", role: "밥조", from: "05", oneLiner: "포켓몬 이름 정현", birthday: "7/11", hobbies: "러닝, 넷플릭스" },
     { name: "도예빈", role: "밥조", from: "05", oneLiner: "포켓몬 이름 또도예빈", birthday: "5/15", hobbies: "여행, 음악", funFacts: "열품타 그룹 'Hotsix never sleep' 만듦" },
-    { name: "이유빈", role: "밥조", from: "", oneLiner: "포켓몬 이름 이브빈", funFacts: "곧 졸업, 졸업 스냅에 조원들이 축하하러 감" },
+    { name: "이유빈", role: "밥조", from: "03", oneLiner: "포켓몬 이름 이브빈", birthday: "2/4", hobbies: "헬스, 드라마", funFacts: "곧 졸업, 졸업 스냅에 조원들이 축하하러 감" },
     { name: "김상엽", role: "밥조", from: "01", oneLiner: "포켓몬 이름 이상엽씨, 조에서 '아빠'로 불림", birthday: "1/3", hobbies: "노래 들으며 러닝" },
     { name: "세드릭(본명 곽경현)", role: "밥조", from: "06", oneLiner: "포켓몬 이름 세드리자몽, 예전엔 버디였다가 지금은 벗", birthday: "10/18", hobbies: "축구, 게임",
       funFacts: "쿠이사FC 활동, 조원 공부용 스터디룸 예약" },
