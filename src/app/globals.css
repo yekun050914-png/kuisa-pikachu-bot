@@ -149,3 +149,8 @@ body { word-break: keep-all; }
 .character-photo-slot:has(img) { width: 76px; height: 76px; background: transparent; border: 0; border-radius: 0; overflow: visible; }
 .character-photo-slot img { object-fit: contain; filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(2px 3px 0 rgba(43, 43, 43, .3)); }
 @media (max-width: 560px) { .character-photo-slot:has(img) { width: 62px; height: 62px; } }
+
+/* 글씨체: 갈무리11 (불러오기 전·실패 시엔 기본 고딕) */
+body, button, textarea { font-family: Galmuri11, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; -webkit-font-smoothing: none; }
+h1, .suggestion, .conversation-start { font-weight: 700; }
+.message-bubble { line-height: 1.8; }
