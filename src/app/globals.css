@@ -109,7 +109,7 @@ textarea { border: 2px solid var(--border); }
 .send { border: 2px solid var(--border); }
 .typing-dots i { background: var(--primary); }
 @media (max-width: 560px) {
-  .chat-card { border: 0; box-shadow: none; }
+  .chat-card { border: 0; border-radius: 0; box-shadow: none; }
   .suggestion { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { .suggestion { transition: none; } }
@@ -136,7 +136,16 @@ textarea { border: 2px solid var(--border); }
 @media (prefers-reduced-motion: reduce) { .send-ball img { transition: none; } }
 
 /* 대화창 오른쪽 아래 장식 사진: public/chat-corner.png */
-.conversation-wrap { position: relative; display: flex; flex: 1; min-height: 0; }
+.conversation-wrap { position: relative; display: flex; flex: 1; min-height: 0; overflow: hidden; }
 .conversation-wrap .conversation { flex: 1; position: relative; z-index: 1; background: transparent; }
 .chat-corner { position: absolute; right: 18px; bottom: 14px; z-index: 0; width: min(18%, 110px); height: auto; opacity: .9; transform: rotate(8deg); filter: drop-shadow(3px 4px 0 rgba(43, 43, 43, .25)); pointer-events: none; user-select: none; }
-@media (max-width: 560px) { .chat-corner { width: min(20%, 78px); right: 12px; } }
+@media (max-width: 560px) { .chat-corner { width: 64px; right: 14px; bottom: 10px; transform: rotate(6deg); } }
+
+/* 한글이 단어 중간에서 줄바꿈되지 않게 (긴 영어·링크는 그래도 줄바꿈) */
+body { word-break: keep-all; }
+.character-info p { white-space: pre-line; }
+
+/* 상단 피카츄: 동그라미 테두리 없이 모양만 (배경 투명 png 기준) */
+.character-photo-slot:has(img) { width: 76px; height: 76px; background: transparent; border: 0; border-radius: 0; overflow: visible; }
+.character-photo-slot img { object-fit: contain; filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(2px 3px 0 rgba(43, 43, 43, .3)); }
+@media (max-width: 560px) { .character-photo-slot:has(img) { width: 62px; height: 62px; } }
