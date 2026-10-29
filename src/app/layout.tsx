@@ -13,5 +13,14 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ko"><body>{children}</body></html>;
+  return (
+    <html lang="ko">
+      <head>
+        {/* 갈무리(픽셀 글씨체): 게임 대사창 느낌 */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/galmuri.css" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
 }
