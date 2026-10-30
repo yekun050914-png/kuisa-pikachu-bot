@@ -24,6 +24,7 @@ export const team: {
   program: string;
   groupName: string;
   slogan: string;
+  vibe: string;
   semester: string;
   meetingCount: string;
   members: Member[];
@@ -37,6 +38,7 @@ export const team: {
   program: "KUISA (고려대 외국인 학생 버디 프로그램)",
   groupName: "Hot-Six (Hot-6ix, 26기 6조)",
   slogan: "버디와 벗이 특히 친하고 다 같이 잘 뭉치는 조",
+  vibe: "취향 겹치는 사람이 많음(일드·중드·F1·축구·운동 등) / 운명이 갈라놓은 쌍둥이처럼 잘 맞음 / 모든 행사 참여율 1위 / 번개가 많음 / 핑크블러드가 흐르는 사람이 많음(뜻은 따로 풀이하지 말 것)",
   semester: "2026년 2학기 상반기 (금요일 상반기 전체회의 발표)",
   meetingCount: "금요일 발표자는 도예빈, 이채민, 김예건",
 
@@ -78,6 +80,7 @@ export const team: {
     { label: "벗(조원)", value: "14명" },
     { label: "버디", value: "약 70명" },
     { label: "개강 전 번개", value: "6차" },
+    { label: "행사 참여율", value: "모든 행사 1위" },
   ],
 
   // 에피소드 (첫 번째부터 소개)
@@ -102,7 +105,8 @@ export const team: {
   faq: [
     { q: "상반기에 뭐 했어?", a: "개강 전 번개 6차로 벗들이 먼저 뭉치고, 개총·개파에서 버디들을 맞이했어! 9월 MT에선 새벽 풋살, 고연전에선 다 같이 응원까지. 버디랑 벗이 진짜 하나가 됐어" },
     { q: "조원 소개해 줘 (전체)", a: "벗은 14명! 조장 윤선욱, 운영진 2, 기획팀 2, 밥조 6, 미디어 3명. 궁금한 사람 이름을 말하면 포켓몬 도감처럼 알려 줄게 (한 번에 14명 나열 금지)" },
-    { q: "조의 제일 큰 자랑?", a: "버디와 벗이 특히 친하고 잘 뭉친다는 것! MT에선 새벽에 다 같이 풋살까지 했어" },
+    { q: "조의 제일 큰 자랑?", a: "버디와 벗이 특히 친하고 잘 뭉친다는 것! 모든 행사 참여율 1위에, MT에선 새벽에 다 같이 풋살까지 했어" },
+    { q: "조 분위기 / 특징?", a: "일드·중드·F1·축구·운동처럼 취향 겹치는 사람이 많아서, 운명이 갈라놓은 쌍둥이처럼 잘 맞아! 번개도 많고 핑크블러드가 흐르는 사람도 많아" },
     { q: "제일 재밌었던 활동 / 기억에 남는 순간?", a: "MT 새벽 풋살! 소고기도 구워 먹으면서 버디랑 벗이 하나가 됐어" },
     { q: "고연전 때 뭐 했어?", a: "야구 같은 경기에서 다 같이 일어나서 응원했고, 뒷풀이에선 윤선욱이랑 세드릭이 FM까지 했어" },
     { q: "버디 몇 명 / 누구?", a: "약 70명! 이름은 비밀이지만 벗 14명이랑 정말 친해" },
@@ -143,6 +147,7 @@ export function buildKnowledge(): string {
   out.push(line("프로그램", team.program));
   out.push(line("조 이름", team.groupName));
   out.push(line("한 줄 소개", team.slogan));
+  out.push(line("조 분위기", team.vibe));
   out.push(line("활동 기간", team.semester));
   out.push(line("참고", team.meetingCount));
 
